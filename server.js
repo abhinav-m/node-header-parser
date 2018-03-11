@@ -1,6 +1,7 @@
 const http = require("http");
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
+
 const server = http.createServer((req, res) => {
   const os = req.headers.host;
   const ip = req.socket.localAddress;
@@ -19,6 +20,6 @@ const server = http.createServer((req, res) => {
   res.end(stringRes, "utf-8");
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log(`Server is listening at ${port}`);
 });
