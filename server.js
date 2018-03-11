@@ -1,12 +1,12 @@
 const http = require("http");
 
-const useragent = require("useragent");
+const uaparserjs = require("ua-parser-js");
 
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  const os = useragent.parse(req.headers["user-agent"]).os.toString();
-
+  const { name, version } = uaparserjs(req.headers["user-agent"]).os;
+  const os = name + " " + version;
   //https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node
   const ip = req.headers["x-forwarded-for"]
     ? req.headers["x-forwarded-for"].split(",").pop()
