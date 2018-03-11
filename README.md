@@ -7,4 +7,4 @@ A simple api endpoint which returns client information such as os, language and 
 1.  Parsing user agent properly (had to use library).
 2.  Getting correct IP address.
 
-[APIendpoint](https://pure-hamlet-85968.herokuapp.com/)
+> [API](https://pure-hamlet-85968.herokuapp.com/)
