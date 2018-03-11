@@ -3,8 +3,8 @@ const http = require("http");
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  const os = req.headers.hostname;
-  const ip = res.socket.remoteAddress;
+  const os = req.headers["user-agent"];
+  const ip = req.connection.remoteAddress;
   const lang = req.headers["accept-language"].split(",")[0];
   const stringRes = JSON.stringify({
     os,
